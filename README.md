@@ -23,16 +23,38 @@ A Spring Boot project demonstrating **JWT-based authentication and authorization
 ---
 
 ## ⚙️ Setup
-
-1. **Clone the repository:** git clone https://github.com/<your-username>/spring-security-with-jwt.git
+1. **Clone the repository:** git clone https://github.com/savkarmali/spring-security-with-jwt.git
 2. **Build and run:** mvn spring-boot:run
 3. **The application will start at:** http://localhost:8080
 
+---
 
 🔑 JWT Details- Algorithm: HS256
 - Secret: Defined in JwtUtil (insurance-secret-insurance-secret-insurance-secret)
 - Expiration: 10 minutes
 
+---
+
+📬 API Endpoints
+1. Login (Generate JWT)
+      POST http://localhost:8080/auth/login?username=testuser
+   Response:(jwt token)
+      "eyJhbGciOiJIUzI1NiJ9..."
+   
+2. Raise Claim (Authenticated)
+      POST http://localhost:8080/auth/claims
+      Authorization: Bearer <JWT_TOKEN>
+      Content-Type: application/json
+
+      {
+          "policyNumber": "POL111",
+          "customerId": "CUST101",
+          "claimAmount": 27000
+      }
+   
+3. Get All Claims (Authenticated)
+      GET http://localhost:8080/auth/claims
+      Authorization: Bearer <JWT_TOKEN>
 
 
 
