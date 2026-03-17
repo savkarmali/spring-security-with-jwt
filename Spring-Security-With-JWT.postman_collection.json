@@ -1,0 +1,109 @@
+{
+  "info": {
+    "_postman_id": "57d6a9a3-9ebc-48c4-8b59-646cdaeccce4",
+    "name": "Spring-Security-With-JWT",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "5592273",
+    "_collection_link": "https://go.postman.co/collection/5592273-57d6a9a3-9ebc-48c4-8b59-646cdaeccce4?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "raiseClaim",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlciIsImlhdCI6MTc3MTUyNDk4MCwiZXhwIjoxNzcxNTI1MTYwfQ.RwipQgThhPS4wbLbi5Jdath_XF6atmTYAIp-jaK75dA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"policyNumber\": \"POL444\",\r\n    \"customerId\": \"CUST33\",\r\n    \"claimAmount\": 70000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/auth/claims",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "auth",
+            "claims"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getClaims",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlciIsImlhdCI6MTc3MTUyNTExMSwiZXhwIjoxNzcxNTI1MjkxfQ.6E1HbYrFcq0j0HSe_lk3bgWoMOhkIR5V0zMax12q2GI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/auth/claims",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "auth",
+            "claims"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "generateToken",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/auth/login?username=testuser",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "auth",
+            "login"
+          ],
+          "query": [
+            {
+              "key": "username",
+              "value": "testuser"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
