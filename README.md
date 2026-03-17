@@ -38,7 +38,7 @@ A Spring Boot project demonstrating **JWT-based authentication and authorization
 
 This project exposes three main endpoints for authentication and claim management.
 
----
+
 
 ## 1. Login (Generate JWT)
 
@@ -68,6 +68,6 @@ POST http://localhost:8080/auth/login?username=testuser
       Authorization: Bearer <JWT_TOKEN>
 
 
-
+---
 
    
