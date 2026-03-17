@@ -34,14 +34,24 @@ A Spring Boot project demonstrating **JWT-based authentication and authorization
 - Expiration: 10 minutes
 
 ---
+# 📬 API Endpoints
 
-📬 API Endpoints
-1. Login (Generate JWT)
-      POST http://localhost:8080/auth/login?username=testuser
+This project exposes three main endpoints for authentication and claim management.
+
+---
+
+## 1. Login (Generate JWT)
+
+**Request**
+
+POST http://localhost:8080/auth/login?username=testuser
+
+
    Response:(jwt token)
       "eyJhbGciOiJIUzI1NiJ9..."
    
-2. Raise Claim (Authenticated)
+## 2. Raise Claim (Authenticated)
+
       POST http://localhost:8080/auth/claims
       Authorization: Bearer <JWT_TOKEN>
       Content-Type: application/json
@@ -52,7 +62,8 @@ A Spring Boot project demonstrating **JWT-based authentication and authorization
           "claimAmount": 27000
       }
    
-3. Get All Claims (Authenticated)
+## 3. Get All Claims (Authenticated)
+
       GET http://localhost:8080/auth/claims
       Authorization: Bearer <JWT_TOKEN>
 
